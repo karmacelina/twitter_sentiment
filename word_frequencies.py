@@ -3,6 +3,9 @@ import nltk
 from nltk.corpus import stopwords
 from nltk import FreqDist
 
+tweets = pd.read_csv('tweets_thrones2.csv')
+df_noRT = tweets[tweets['text'].str.contains("RT")==False]
+
 stop = stopwords.words('english')
 text = df_noRT['text']
 
